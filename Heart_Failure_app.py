@@ -24,9 +24,10 @@ with st.sidebar:
         uploaded_file = st.sidebar.file_uploader("Choose a file")
         st.button(label="Use Default Data", key="btn_default_file")
 #df = load_data("./heart_failure_clinical_records_dataset.csv")
+        if st.session_state.get("btn_default_file"):
+               uploaded_file = pd.read_csv(r'./heart_failure_clinical_records_dataset.csv')
 
-if st.session_state.get("btn_default_file"):
-        uploaded_file = pd.read_csv(r'./heart_failure_clinical_records_dataset.csv')
+
 
 
 if uploaded_file is None:
