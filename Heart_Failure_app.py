@@ -22,6 +22,7 @@ def load_data(file):
 with st.sidebar:
         st.header("Configuration")
         uploaded_file = st.sidebar.file_uploader("Choose a file")
+        st.button(label="Use Default Data", key="btn_default_file")
 #df = load_data("./heart_failure_clinical_records_dataset.csv")
 
 if uploaded_file is None:
@@ -30,7 +31,7 @@ if uploaded_file is None:
 
 df = load_data(uploaded_file)
 
-st.button(label="Use Default Data", key="btn_default_file")
+
 
 if st.session_state.get("btn_default_file"):
         uploaded_file = pd.read_csv(r'https://raw.githubusercontent.com/Whistlingwind/wk7-Heart-Failure-ANN-assignment/main/heart_failure_clinical_records_dataset.csv')
