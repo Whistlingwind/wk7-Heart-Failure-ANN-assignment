@@ -30,6 +30,12 @@ if uploaded_file is None:
 
 df = load_data(uploaded_file)
 
+st.button(label="Use Default Data", key="btn_default_file")
+
+if st.session_state.get("btn_default_file"):
+        uploaded_file = pd.read_csv(file)
+
+
 with  st.expander("Data Preview"):
     st.markdown("_Proto_")
     st.dataframe(df)
