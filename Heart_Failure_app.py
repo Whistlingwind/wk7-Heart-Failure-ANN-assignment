@@ -34,7 +34,7 @@ if uploaded_file is None:
         st.info(" Upload a file through config", icon="ℹ️")
         st.stop()
 
-df = load_data(pd.read_csv(r'https://raw.githubusercontent.com/Whistlingwind/wk7-Heart-Failure-ANN-assignment/main/heart_failure_clinical_records_dataset.csv'))
+df = load_data(pd.read_csv(r'./heart_failure_clinical_records_dataset.csv'))
 
 
 
