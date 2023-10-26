@@ -28,7 +28,7 @@ with st.sidebar:
                uploaded_file = load_data('heart_failure_clinical_records_dataset.csv')
 
 
-uploaded_file = load_data(r'https://raw.githubusercontent.com/Whistlingwind/wk7-Heart-Failure-ANN-assignment/main/heart_failure_clinical_records_dataset.csv')
+uploaded_file = pd.read_csv(r'https://raw.githubusercontent.com/Whistlingwind/wk7-Heart-Failure-ANN-assignment/main/heart_failure_clinical_records_dataset.csv')
 
 if uploaded_file is None:
         st.info(" Upload a file through config", icon="ℹ️")
