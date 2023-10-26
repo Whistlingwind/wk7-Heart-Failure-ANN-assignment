@@ -2,6 +2,7 @@
 ## This took ages to setup...!
 
 import streamlit as st
+## Import required libraries
 import pandas as pd
 import streamlit as st
 
@@ -11,30 +12,31 @@ st.set_page_config(
        layout="wide"
 )
 
-st.title("Heart Failure Assignment8")
+st.title("Heart Failure Assignment")
 st.markdown("_Proto_")
 
+@st.cache_data
+def load_data(file):
+        data = pd.read_csv(file)
 
-       
+        return data
 with st.sidebar:
         st.header("Configuration")
-        file = st.file_uploader("Upload a file", type="csv")
-        if st.button('Get data'):
-           df = pd.read_csv(file)
-           
-       
-        if st.button('Save'):
-           # This will always error.
-           df.to_csv('data.csv')
+        uploaded_file = st.sidebar.file_uploader("Choose a file")
 
+if uploaded_file is None:
+        st.info(" Upload a file through config", icon="ℹ️")
+        st.stop()
 
-
-
-
+df = load_data(uploaded_file)
 
 with  st.expander("Data Preview"):
     st.markdown("_Proto_")
     st.dataframe(df)
+
+
+
+
 
 with  st.expander("Data Preview2"):
     st.dataframe(df)
