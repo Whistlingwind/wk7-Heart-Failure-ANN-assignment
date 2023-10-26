@@ -11,7 +11,7 @@ st.set_page_config(
        layout="wide"
 )
 
-st.title("Heart Failure Assignment")
+st.title("Heart Failure Assignment7")
 st.markdown("_Proto_")
 
 @st.cache_data
