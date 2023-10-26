@@ -14,18 +14,19 @@ st.set_page_config(
 st.title("Heart Failure Assignment7")
 st.markdown("_Proto_")
 
-@st.cache_data
-def load_data(file):
-        data = pd.read_csv(file)
 
-        return data
+       
 with st.sidebar:
         st.header("Configuration")
-        uploaded_file = st.sidebar.file_uploader("Choose a file")
-        st.button(label="Use Default Data", key="btn_default_file")
-#df = load_data("./heart_failure_clinical_records_dataset.csv")
-        if st.session_state.get("btn_default_file"):
-               uploaded_file = load_data('heart_failure_clinical_records_dataset.csv')
+        file = st.file_uploader("Upload a file", type="csv")
+        if st.button('Get data'):
+           df = pd.read_csv(file)
+           # This display will go away with the user's next action.
+           st.write(df)
+       
+        if st.button('Save'):
+           # This will always error.
+           df.to_csv('data.csv')
 
 
 #uploaded_file = pd.read_csv(r'https://raw.githubusercontent.com/Whistlingwind/wk7-Heart-Failure-ANN-assignment/main/heart_failure_clinical_records_dataset.csv')
@@ -34,7 +35,7 @@ if uploaded_file is None:
         st.info(" Upload a file through config", icon="ℹ️")
         st.stop()
 
-df = load_data(pd.read_csv(r'./heart_failure_clinical_records_dataset.csv'))
+df = load_data(uploaded_file)
 
 
 
