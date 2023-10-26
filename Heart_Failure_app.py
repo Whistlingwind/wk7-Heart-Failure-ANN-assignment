@@ -28,13 +28,6 @@ with st.sidebar:
            df.to_csv('data.csv')
 
 
-#uploaded_file = pd.read_csv(r'https://raw.githubusercontent.com/Whistlingwind/wk7-Heart-Failure-ANN-assignment/main/heart_failure_clinical_records_dataset.csv')
-
-if uploaded_file is None:
-        st.info(" Upload a file through config", icon="ℹ️")
-        st.stop()
-
-df = load_data(uploaded_file)
 
 
 
