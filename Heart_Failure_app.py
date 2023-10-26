@@ -2,13 +2,6 @@
 ## This took ages to setup...!
 
 import streamlit as st
-
-from streamlit_jupyter import StreamlitPatcher, tqdm
-
-StreamlitPatcher().jupyter()  # register streamlit with jupyter-compatible wrappers
-
-## Import required libraries
-
 import pandas as pd
 import streamlit as st
 
