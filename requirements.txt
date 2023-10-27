@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+duckdb
+seaborn
+matplotlib
+plotly
+sklearn
+PIL
+keras
+warnings
