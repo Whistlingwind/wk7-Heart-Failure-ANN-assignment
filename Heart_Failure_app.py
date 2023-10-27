@@ -24,7 +24,7 @@ st.set_page_config(
        layout="wide"
 )
 class DuckDBConnection(ExperimentalBaseConnection[duckdb.DuckDBPyConnection])
-def _connect(self, **kwargs) -> duckdb.DuckDBPyConnection:
+def _connect(self, **kwargs)
     if 'database' in kwargs:
         db = kwargs.pop('database')
     else:
